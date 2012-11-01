@@ -5,6 +5,8 @@ class Web.Views.Events.EventView extends Backbone.View
 
   events:
     "click .destroy" : "destroy"
+    "mouseover" : "showControls"
+    "mouseleave" : "hideControls"
 
   tagName: "tr"
 
@@ -17,3 +19,9 @@ class Web.Views.Events.EventView extends Backbone.View
   render: ->
     $(@el).html(@template(@model.toJSON() ))
     return this
+
+  showControls: ->
+    @$('.controls').show();
+
+  hideControls: (evt)->
+    @$('.controls').hide();
