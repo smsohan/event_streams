@@ -27,7 +27,7 @@ class Web.Routers.EventsRouter extends Backbone.Router
     event = @events.get(id)
 
     @view = new Web.Views.Events.ShowView(model: event)
-    $("#events").html(@view.render().el)
+    $("#event-detail").html(@view.render().el)
 
   edit: (id) ->
     event = @events.get(id)
