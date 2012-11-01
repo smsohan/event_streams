@@ -8,3 +8,5 @@ This is a sample application with some BackboneJS/Rails/TwitterBootstap code. To
     rails s
 
 And browse http://localhost:3000
+
+Run the Jasmine Tests by browsing: http://localhost:3000/jasmine

@@ -8,8 +8,6 @@ class Web.Views.Events.EventView extends Backbone.View
     "mouseover" : "showControls"
     "mouseleave" : "hideControls"
 
-  tagName: "tr"
-
   destroy: () ->
     @model.destroy()
     this.remove()

@@ -1,6 +1,11 @@
-<td><%= title %></td>
-<td><%= content %></td>
+<div class="well">
+  <%= title %>
+  <%= content %>
 
-<td><a href="#/<%= id %>" class="controls">Show</td>
-<td><a href="#/<%= id %>/edit" class="controls">Edit</td>
-<td><a href="#/<%= id %>/destroy" class="destroy controls">Destroy</a></td>
+  <div class="controls">
+    <a href="#/<%= id %>" class="controls">Show</a>
+    <a href="#/<%= id %>/edit" class="controls">Edit</a>
+    <a href="#/<%= id %>/destroy" class="destroy controls">Destroy</a>
+  </div>
+
+</div>

@@ -14,12 +14,12 @@ class Web.Views.Events.IndexView extends Backbone.View
   addAll: () =>
     @$('#header').html(@options.events.header)
 
-    @$('tbody').empty()
+    @$('#events-list').empty()
     @options.events.each(@addOne)
 
   addOne: (event) =>
     view = new Web.Views.Events.EventView({model : event})
-    @$("tbody").append(view.render().el)
+    @$('#events-list').append(view.render().el)
 
   showSearch: =>
     @$('a.search').hide()
