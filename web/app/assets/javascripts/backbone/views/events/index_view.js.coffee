@@ -5,7 +5,6 @@ class Web.Views.Events.IndexView extends Backbone.View
 
   events:
     "click a.search": 'showSearch'
-    "click button.search": 'search'
     'keypress input.search': 'handleEnterKey'
 
   initialize: () ->
@@ -26,10 +25,9 @@ class Web.Views.Events.IndexView extends Backbone.View
     @$('.searchBox').show()
 
   handleEnterKey: (event)=>
-    @search() if event.keyCode == 13
-
-  search: =>
-    @options.events.filter(@$('input.search').val())
+    if event.keyCode == 13
+      @options.events.filter(@$('input.search').val())
+      return false
 
   render: =>
     $(@el).html(@template(events: @options.events.toJSON(), header: @options.events.header ))
