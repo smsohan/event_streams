@@ -1,0 +1,24 @@
+<div id="events">
+</div>
+
+
+<%= content_for :sidebar do %>
+
+  <ul class="nav nav-list">
+    <li class="nav-header">Filters</li>
+    <li><%= link_to "Containing Hal", "#/filter/hal", id: 'filter-hal'  %></li>
+    <li><%= link_to "Containing Canada", "#/filter/canada", id: 'filter-canada'  %></li>
+    <li><%= link_to "Show All", "#/filter/all"  %></li>
+  </ul>
+
+<% end %>
+
+
+<%= content_for :script do %>
+  $(document).ready(function(){
+  	window.router = new Web.Routers.EventsRouter({events: <%=raw @events.to_json %>});
+    Backbone.history.start();
+
+    window.router.index();
+  });
+<% end %>
