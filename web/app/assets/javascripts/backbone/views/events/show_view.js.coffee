@@ -11,4 +11,4 @@ class Web.Views.Events.ShowView extends Backbone.View
     return this
 
   hide: ->
-    $(@el).remove()
+    @trigger "show_event:hide"

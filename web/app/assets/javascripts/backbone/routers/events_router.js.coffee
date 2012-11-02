@@ -33,6 +33,9 @@ class Web.Routers.EventsRouter extends Backbone.Router
     @popover.data({content: @view.render().el})
     @popover.popover('show')
 
+    @view.on "show_event:hide", =>
+      @popover.popover('hide')
+
   edit: (id) ->
     event = @events.get(id)
 
