@@ -26,8 +26,12 @@ class Web.Routers.EventsRouter extends Backbone.Router
   show: (id) ->
     event = @events.get(id)
 
+    @popover.popover('hide') if @popover
+
     @view = new Web.Views.Events.ShowView(model: event)
-    $("#event-detail").html(@view.render().el)
+    @popover = $('#event-' + event.id)
+    @popover.data({content: @view.render().el})
+    @popover.popover('show')
 
   edit: (id) ->
     event = @events.get(id)
